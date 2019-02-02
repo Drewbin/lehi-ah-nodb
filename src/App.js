@@ -39,7 +39,9 @@ class App extends Component {
   render() {
     // --- Map through characters and render them using the Card component --- //
     let mappedCharacters = this.state.characters.map((charcter, index) => {
-      return <Card key={index} info={charcter}/>
+      if(charcter.id < 9){
+        return <Card key={index} info={charcter}/>
+      }
     });
 
     return (
