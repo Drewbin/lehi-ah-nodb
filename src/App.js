@@ -1,25 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+// --- Imported Packages --- //
+import axios from 'axios';
+
+// --- Imported Componants --- //
+import Card from './componants/card/Card';
+
+// --- Style Sheet --- //
+import 'reset-css';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+
+    this.state = {
+      characters: []
+    }
+  }
+
+  // --- LifeCycle Methods --- //
+  componentDidMount(){
+    this.getCharacters();
+  }
+
+  // --- Custom Methods --- //
+  getCharacters = () => {
+    axios.get('https://rickandmortyapi.com/api/character').then((response) => {
+      this.setState({
+        characters: response.data.results
+      })
+    }).catch((err) => {
+      console.error(err);
+    })
+  };
+
+
   render() {
+    // --- Map through characters and render them using the Card component --- //
+    let mappedCharacters = this.state.characters.map((charcter, index) => {
+      return <Card key={index} info={charcter}/>
+    });
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="character-container">
+          {mappedCharacters}
+        </div>
       </div>
     );
   }
