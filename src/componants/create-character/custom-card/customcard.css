@@ -1,0 +1,74 @@
+.custom-card-container {
+    width: 30vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: #424242;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.custom-card-image {
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.custom-card-info {
+    width: 100%;
+    height: 50%;
+    background: #424242;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.custom-info {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.custom-info > div {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+    border-bottom: 1px solid #616161;
+}
+
+.custom-info > div > span {
+    color: #fb8c00;
+}
+
+.btns-container {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btns-container > button {
+    background: #fb8c00;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}

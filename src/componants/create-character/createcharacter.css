@@ -71,5 +71,8 @@
 .character-display-container {
     width: 50vw;
     height: 100%;
-    background: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
