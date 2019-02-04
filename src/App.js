@@ -6,6 +6,7 @@ import axios from 'axios';
 // --- Imported Componants --- //
 import Card from './componants/card/Card';
 import Header from './componants/header/Header';
+import Randomize from './componants/randomize/Randomize';
 
 // --- Style Sheet --- //
 import 'reset-css';
@@ -49,6 +50,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Randomize random={this.getCharacters}/>
         <div className="character-container">
           {mappedCharacters}
         </div>
