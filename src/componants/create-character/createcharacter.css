@@ -1,0 +1,75 @@
+.custom-character-container {
+    width: 100vw;
+    height: 80vh;
+    background: #263238;
+    display: flex;
+    flex-direction: row;
+}
+
+.creator-container {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.creator-container > h1 {
+    font-size: 45px;
+    color: #fb8c00;
+    text-decoration: underline;
+}
+
+.creator-container > div {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.creator-container > div > span {
+    width: 20%;
+    height: 50%;
+    background: #fb8c00;
+    border: 2px black solid;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.creator-container > div > input {
+    width: 60%;
+    height: 48%;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    border: 2px black solid;
+    border-left: none;
+    padding-left: 2%;
+}
+
+.creator-container > button {
+    background: #fb8c00;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    outline: none;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.character-display-container {
+    width: 50vw;
+    height: 100%;
+    background: blue;
+}

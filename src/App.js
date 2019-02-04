@@ -7,6 +7,7 @@ import axios from 'axios';
 import Card from './componants/card/Card';
 import Header from './componants/header/Header';
 import Randomize from './componants/randomize/Randomize';
+import CreateCharacter from './componants/create-character/CreateCharacter';
 
 // --- Style Sheet --- //
 import 'reset-css';
@@ -54,6 +55,7 @@ class App extends Component {
         <div className="character-container">
           {mappedCharacters}
         </div>
+        <CreateCharacter />
       </div>
     );
   }
