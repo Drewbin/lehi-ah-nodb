@@ -35,7 +35,6 @@ class App extends Component {
     })
   };
 
-
   render() {
     // --- Map through characters and render them using the Card component --- //
     let mappedCharacters = this.state.characters.map((charcter, index) => {

@@ -2,7 +2,9 @@
     width: 22%;
     height: 80vh;
     background-color: #424242;
-    border: 2px solid black;
+    border-radius: 2% 2% 2% 2%;
+    box-shadow: #424242;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 
 /* Character Image */
@@ -16,6 +18,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    border-radius: 2% 2% 0 0;
 }
 
 .character-name-container {
@@ -24,6 +27,12 @@
     background-color: rgba(5, 5, 5, .8);
     font-size: 26px;
     color: #eee;
+    transition: ease-in-out .3s;
+}
+
+.character-name-container:hover {
+    cursor: pointer;
+    background-color: rgba(5, 5, 5, .9);
 }
 
 .character-name-container > h1 {
@@ -33,3 +42,36 @@
 }
 
 /* Character Info */
+.character-info-container {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-info-container > div {
+    width: 80%;
+    height: 20%;
+    margin: 2%;
+    border-bottom: 1px solid #616161;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-info-container > div:last-child{
+    border-bottom: none;
+}
+
+.character-info-container > div > h1 {
+    color: #fb8c00;
+    font-size: 18px;
+}
+
+.character-info-container > div > h2 {
+    color: white;
+    font-size: 18px;
+}
