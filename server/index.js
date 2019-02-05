@@ -21,6 +21,15 @@ app.delete('/remove/:id', (req, res) => {
     res.status(200).send(characters);
 })
 
+app.put('/update/:id', (req, res) => {
+    console.log(req.body, req.params)
+    let {id} = req.params;
+    if(characters.length == 1){
+        characters[0] = req.body;
+    };
+    res.status(200).send(characters);
+})
+
 
 // ------ Server Listening ------ //
 app.listen(3005, () => {

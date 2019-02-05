@@ -23,7 +23,7 @@ export default function CustomCard(props) {
         </div>
         <div className="btns-container">
             <button onClick={() => props.remove(props.id)}>Remove</button>
-            <button>Edit</button>
+            <button onClick={() => props.edit()}>Edit</button>
         </div>
       </div>
     </div>

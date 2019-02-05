@@ -15,7 +15,8 @@ export default class CreateCharacter extends Component {
             name: '',
             image: '',
             gender: '',
-            customCharacters: []
+            customCharacters: [],
+            edit: false
         }
     }
 
@@ -38,11 +39,33 @@ export default class CreateCharacter extends Component {
         })
     }
 
+    updateCharacter = () => {
+        let body = this.state;
+        axios.put(`/update/0`, body).then(response => {
+            console.log(response)
+            this.setState({
+                customCharacters: response.data
+            })
+        })
+        this.setState({
+            name: '',
+            image: '',
+            gender: '',
+            edit: !this.state.edit
+        })
+    }
+
     deleteCharacter = (id) => {
         axios.delete(`/remove/${id}`).then(response => {
             this.setState({
                 customCharacters: response.data
             })
+        })
+    }
+
+    editMode = () => {
+        this.setState({
+            edit: !this.state.edit
         })
     }
 
@@ -62,7 +85,7 @@ export default class CreateCharacter extends Component {
 
   render() {
       let customCharacters = this.state.customCharacters.map((character, index) => {
-        return <CustomCard key={index} character={character} remove={this.deleteCharacter} id={index}/>
+        return <CustomCard key={index} character={character} remove={this.deleteCharacter} id={index} changeName={this.handleChangeName} changeImage={this.handleChangeImage} changeGender={this.handleChangeGender} edit={this.editMode}/>
       })
 
     return (
@@ -81,7 +104,9 @@ export default class CreateCharacter extends Component {
                 <span>Gender</span>
                 <input type="text" onChange={(e) => this.handleChangeGender(e.target.value)} value={this.state.gender}/>
             </div>
-            <button onClick={this.sendInfo}>Create</button>
+            {
+                this.state.edit ? <button onClick={this.updateCharacter} >Update</button>: <button onClick={this.sendInfo}>Create</button>
+            }
         </div>
         <div className="character-display-container">
             {customCharacters}
